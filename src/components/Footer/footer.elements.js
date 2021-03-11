@@ -40,6 +40,10 @@ export const ContactContainer = styled.div`
   @media screen and (max-width: 1030px) {
     grid-template-areas: ${`'col1 col1' 'col2 col2'`};
   }
+
+  @media screen and (max-width: 600px) {
+    padding: 40px 20px;
+  }
 `;
 
 export const FormText = styled.div`
@@ -101,7 +105,7 @@ export const InputLabelContainer = styled.div`
 export const Label = styled.label`
   position: absolute;
   left: 8px;
-  top: 25px;
+  top: 1rem;
   color: #2e2e2e;
   transition: 0.4s ease-out;
 
@@ -183,6 +187,10 @@ export const SloganContainer = styled.div`
 export const SloganText = styled.p`
   font-size: 0.85rem;
   padding-right: 42px;
+
+  @media screen and (max-width: 600px) {
+    padding-right: 0px;
+  }
 `;
 
 export const LinksContainer = styled.div`

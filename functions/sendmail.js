@@ -1,8 +1,7 @@
-require("dotenv").config();
+import dotenv from "dotenv";
+import nodemailer from "nodemailer";
 
-const nodemailer = require("nodemailer");
-
-const log = console.log;
+dotenv.config();
 
 let transporter = nodemailer.createTransport({
   host: process.env.HOST,
@@ -29,7 +28,7 @@ exports.handler = (event, context, callback) => {
 
   transporter.sendMail(mailOptions, (error, data) => {
     if (error) {
-      return log(error);
+      return console.log(error);
     } else {
       callback(null, {
         statusCode: 200,

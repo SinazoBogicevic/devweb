@@ -8,5 +8,7 @@
 
 body {
   position: relative;
+}
+#div {
   overflow-x: hidden;
 }
