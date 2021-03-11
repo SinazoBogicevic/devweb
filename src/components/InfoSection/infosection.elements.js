@@ -5,6 +5,7 @@ import {
   InnerHeading,
 } from "../ServicesOffered/servicesOffered.elements";
 import { NavButton } from "../Navbar/Navbar.elements";
+import { motion } from "framer-motion";
 
 export const Container = styled.section`
   display: flex;
@@ -27,9 +28,9 @@ export const InnerContainer = styled.div`
   }
 `;
 
-export const ContentContainer = styled.div`
+export const ContentContainer = motion.custom(styled.div`
   grid-area: col1;
-`;
+`);
 
 export const InfoLine = styled(Line)`
   width: 40%;
