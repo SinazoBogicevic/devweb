@@ -17,7 +17,7 @@ export const Ball = styled.div`
   height: 80px;
   width: 80px;
   margin-right: 2rem;
-  animation: bounce 0.7s linear infinite alternate;
+  animation: bounce 0.4s linear infinite alternate;
   transform: translateY(0%);
   z-index: 10;
 
@@ -39,9 +39,9 @@ export const Ball = styled.div`
 `;
 
 export const BallTwo = styled(Ball)`
-  animation-delay: 0.4s;
+  animation-delay: 0.2s;
 `;
 
 export const BallThree = styled(Ball)`
-  animation-delay: 0.8s;
+  animation-delay: 0.4s;
 `;
