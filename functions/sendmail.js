@@ -1,15 +1,12 @@
-import dotenv from "dotenv";
 import nodemailer from "nodemailer";
 
-dotenv.config();
-
 let transporter = nodemailer.createTransport({
-  host: process.env.HOST,
-  port: process.env.PORT,
-  secure: process.env.SECURE,
+  host: process.env.REACT_APP_HOST,
+  port: process.env.REACT_APP_PORT,
+  secure: process.env.REACT_APP_SECURE,
   auth: {
-    user: process.env.USER,
-    pass: process.env.PASSWORD,
+    user: process.env.REACT_APP_USER,
+    pass: process.env.REACT_APP_PASSWORD,
   },
 });
 
@@ -19,9 +16,9 @@ exports.handler = (event, context, callback) => {
   let mailOptions = {
     from: {
       name: "Flance",
-      address: process.env.SENDER,
+      address: process.env.REACT_APP_SENDER,
     },
-    to: process.env.RECEIVER,
+    to: process.env.REACT_APP_RECEIVER,
     subject: "Freelancing Client",
     html: `<p><strong>${client}</strong> is looking for a web developer</p>`,
   };

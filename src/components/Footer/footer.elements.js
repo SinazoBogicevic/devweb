@@ -146,6 +146,10 @@ export const Input = styled.input`
 export const Submit = styled(NavButton)`
   border-radius: 0px 12px 12px 0px;
   padding: 12px 20px;
+
+  @media screen and (max-width: 360px) {
+    padding: 12px 4px;
+  }
 `;
 
 export const MyDetailsContainer = styled.div`

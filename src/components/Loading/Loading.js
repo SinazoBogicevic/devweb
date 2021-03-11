@@ -1,18 +1,8 @@
-import {
-  Container,
-  Ball,
-  BallTwo,
-  BallThree,
-  TextContainer,
-  LoadingText,
-} from "./loading.elements";
+import { Container, Ball, BallTwo, BallThree } from "./loading.elements";
 
 const Loading = () => {
   return (
     <Container>
-      <TextContainer>
-        <LoadingText>Loading</LoadingText>
-      </TextContainer>
       <Ball />
       <BallTwo />
       <BallThree />

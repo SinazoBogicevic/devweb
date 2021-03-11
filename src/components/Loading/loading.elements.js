@@ -17,7 +17,7 @@ export const Ball = styled.div`
   height: 80px;
   width: 80px;
   margin-right: 2rem;
-  animation: bounce 0.8s linear infinite alternate;
+  animation: bounce 0.7s linear infinite alternate;
   transform: translateY(0%);
   z-index: 10;
 
@@ -45,14 +45,3 @@ export const BallTwo = styled(Ball)`
 export const BallThree = styled(Ball)`
   animation-delay: 0.8s;
 `;
-
-export const TextContainer = styled.div`
-  padding-right: 24px;
-  padding-left: 32px;
-
-  @media screen and (max-width: 548px) {
-    display: none;
-  }
-`;
-
-export const LoadingText = styled.p``;
