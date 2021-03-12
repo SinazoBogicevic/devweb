@@ -22,29 +22,14 @@ const Infosection = ({
   image,
   imageText,
 }) => {
-  const variants = {
-    initial: {
-      opacity: 0,
-      x: "-100%",
-    },
-    animate: {
-      opacity: 1,
-      x: "100%",
-    },
-    exit: {
-      opacity: 0,
-      x: "-100%",
-    },
-  };
   return (
     <Element name="about">
       <Container>
         <InnerContainer left={left}>
           <ContentContainer
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            variants="variants"
+            initial={{ x: left ? "-100%" : "100%" }}
+            animate={{ x: left ? "0%" : "0%" }}
+            transition={{ ease: "easeOut" }}
           >
             <InfoLine />
             <TextContainer>
@@ -63,7 +48,11 @@ const Infosection = ({
               </Link>
             </TextContainer>
           </ContentContainer>
-          <ImageContainer>
+          <ImageContainer
+            initial={{ x: left ? "100%" : "-100%" }}
+            animate={{ x: left ? "0%" : "0%" }}
+            transition={{ ease: "easeOut" }}
+          >
             <Image src={image} alt={imageText} />
           </ImageContainer>
         </InnerContainer>

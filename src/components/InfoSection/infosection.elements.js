@@ -62,10 +62,10 @@ export const Button = styled(NavButton)`
   padding: 12px 50px;
 `;
 
-export const ImageContainer = styled.div`
+export const ImageContainer = motion.custom(styled.div`
   grid-area: col2;
   max-width: 585px;
-`;
+`);
 
 export const Image = styled.img`
   width: 100%;
