@@ -38,6 +38,10 @@ export const ModalContainer = styled.div`
     grid-template-rows: ${({ hasBtns }) => (hasBtns ? "1fr 2fr" : "1fr")};
   }
 
+  @media screen and (max-width: 390px) {
+    padding: 30px 4px;
+  }
+
   @media screen and (max-width: 380px) {
     grid-template-rows: ${({ hasBtns }) => (hasBtns ? "1fr 2fr" : "1fr 1fr")};
 
@@ -98,6 +102,14 @@ export const LaterBtn = styled(NavButton)`
       #fe8464 100%
     );
   }
+
+  @media screen and (max-width: 390px) {
+    padding: 8px 24px;
+  }
+
+  @media screen and (max-width: 310px) {
+    padding: 8px 18px;
+  }
 `;
 
 export const HireBtn = styled(NavButton)`
@@ -110,5 +122,13 @@ export const HireBtn = styled(NavButton)`
       linear-gradient(to right, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
     background: #fff;
     color: #000;
+  }
+
+  @media screen and (max-width: 390px) {
+    padding: 8px 24px;
+  }
+
+  @media screen and (max-width: 310px) {
+    padding: 8px 18px;
   }
 `;

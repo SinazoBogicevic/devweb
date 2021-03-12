@@ -24,6 +24,10 @@ export const TextContainer = styled.div`
   padding-bottom: 5rem;
   text-align: center;
   width: 50%;
+
+  @media screen and (max-width: 480px) {
+    padding-top: 0px;
+  }
 `;
 
 export const Line = styled.div`

@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { RiArrowRightSLine as arrow } from "react-icons/ri";
+import { motion } from "framer-motion";
 
-export const CardContainer = styled.div`
+export const CardContainer = motion.custom(styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,7 +30,7 @@ export const CardContainer = styled.div`
       transform: rotate(35deg);
     }
   }
-`;
+`);
 
 export const ImagesContainer = styled.div`
   display: flex;

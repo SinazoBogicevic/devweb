@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const ImageContainer = styled.div``;
 
-export const Image = styled.img`
+export const Image = motion.custom(styled.img`
   max-width: 650px;
 
   @media screen and (max-width: 600px) {
@@ -16,4 +17,4 @@ export const Image = styled.img`
   @media screen and (max-width: 380px) {
     max-width: 300px;
   }
-`;
+`);

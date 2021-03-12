@@ -10,6 +10,7 @@ export const data = [
     image: servicesShape1,
     icon: standard,
     styleName: "icon",
+    delay: 0,
     modalText:
       "Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.",
     description:
@@ -21,6 +22,7 @@ export const data = [
     icon: standard,
     image: servicesShape2,
     styleName: "icon",
+    delay: 0.4,
     modalText:
       "Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.",
     description:
@@ -31,6 +33,7 @@ export const data = [
     icon: standard,
     image: servicesShape3,
     styleName: "icon",
+    delay: 0.8,
     modalText:
       "Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.",
     description:

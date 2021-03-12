@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import {
   Container,
   InnerContainer,
@@ -22,14 +25,36 @@ const Infosection = ({
   image,
   imageText,
 }) => {
+  const controls = useAnimation();
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+  });
+
+  const textVariants = {
+    initial: { opacity: 0, x: left ? "-100%" : "100%" },
+    animate: { opacity: 1, x: left ? "0%" : "0%" },
+  };
+
+  const imageVariants = {
+    initial: { opacity: 0, x: left ? "100%" : "-100%" },
+    animate: { opacity: 1, x: left ? "0%" : "0%" },
+  };
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("animate");
+    }
+  }, [controls, inView]);
   return (
     <Element name="about">
       <Container>
         <InnerContainer left={left}>
           <ContentContainer
-            initial={{ x: left ? "-100%" : "100%" }}
-            animate={{ x: left ? "0%" : "0%" }}
-            transition={{ ease: "easeOut" }}
+            ref={ref}
+            initial="initial"
+            animate={controls}
+            transition={{ duration: 1, ease: "easeOut" }}
+            variants={textVariants}
           >
             <InfoLine />
             <TextContainer>
@@ -49,9 +74,11 @@ const Infosection = ({
             </TextContainer>
           </ContentContainer>
           <ImageContainer
-            initial={{ x: left ? "100%" : "-100%" }}
-            animate={{ x: left ? "0%" : "0%" }}
+            ref={ref}
+            initial="initial"
+            animate={controls}
             transition={{ ease: "easeOut" }}
+            variants={imageVariants}
           >
             <Image src={image} alt={imageText} />
           </ImageContainer>

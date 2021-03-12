@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { GoThreeBars } from "react-icons/go";
+import { GoThreeBars, GoX } from "react-icons/go";
 
 export const Nav = styled.nav`
   display: flex;
@@ -94,8 +94,18 @@ export const Hamburger = styled(GoThreeBars)`
   display: none;
 
   @media screen and (max-width: 950px) {
-    display: block;
-    font-size: 1.8rem;
+    display: ${({ clicked }) => (clicked ? "block" : "none")};
+    width: 1.8rem;
+    cursor: pointer;
+  }
+`;
+
+export const Crosses = styled(GoX)`
+  display: none;
+
+  @media screen and (max-width: 950px) {
+    display: ${({ clicked }) => (clicked ? "none" : "block")};
+    width: 1.8rem;
     cursor: pointer;
   }
 `;

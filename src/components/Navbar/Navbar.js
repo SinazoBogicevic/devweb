@@ -10,6 +10,7 @@ import {
   Menu,
   NavCollapsable,
   Hamburger,
+  Crosses,
 } from "./Navbar.elements";
 import { NavbarContext } from "../../NavbarContext";
 import logo from "../../assets/logo.png";
@@ -22,23 +23,22 @@ const Navbar = () => {
     isClicked(!click);
   };
 
-  const changeNav = () => {
-    if (window.scrollY >= 10) {
-      setScrollNav(true);
-      document.querySelector(".menu-items").style.color = "#000";
-      document.querySelector("nav").style.boxShadow =
-        "0px 20px 50px 16px rgb(237,237,237,0.3)";
-      document.querySelector("svg").style.color = "#000";
-    } else {
-      setScrollNav(false);
-      document.querySelector(".menu-items").style.color = "#fff";
-      document.querySelector("nav").style.boxShadow =
-        "0px 0px 0px rgb(0,0,0,0)";
-      document.querySelector("svg").style.color = "#fff";
-    }
-  };
-
   useEffect(() => {
+    const changeNav = () => {
+      if (window.scrollY >= 10) {
+        setScrollNav(true);
+        document.querySelector(".menu-items").style.color = "#000";
+        document.querySelector("nav").style.boxShadow =
+          "0px 20px 50px 16px rgb(237,237,237,0.3)";
+        document.querySelector("svg").style.color = "#000";
+      } else {
+        setScrollNav(false);
+        document.querySelector(".menu-items").style.color = "#fff";
+        document.querySelector("nav").style.boxShadow =
+          "0px 0px 0px rgb(0,0,0,0)";
+        document.querySelector("svg").style.color = "#fff";
+      }
+    };
     window.addEventListener("scroll", changeNav);
   }, []);
 
@@ -106,7 +106,8 @@ const Navbar = () => {
               <NavButton>Hire</NavButton>
             </Link>
           </NavCollapsable>
-          <Hamburger onClick={handleToggle} />
+          <Hamburger clicked={click} onClick={handleToggle} />
+          <Crosses clicked={click} onClick={handleToggle} />
         </Menu>
       </NavContainer>
     </Nav>
