@@ -26,9 +26,7 @@ const Infosection = ({
   imageText,
 }) => {
   const controls = useAnimation();
-  const { ref, inView } = useInView({
-    threshold: 0.1,
-  });
+  const { ref, inView } = useInView({});
 
   const textVariants = {
     initial: { opacity: 0, x: left ? "-100%" : "100%" },
